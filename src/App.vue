@@ -1,9 +1,11 @@
 <template>
-    <header-component @change="setShowMenu"/>
-    <Transition name="fade" mode="out-in">
-          <menu-component @change="setShowMenu" v-if="showMenu"/>
-    </Transition>
-  <router-view />
+  <header-component @change="setShowMenu" />
+  <Transition name="fade" mode="out-in">
+    <menu-component @change="setShowMenu" v-if="showMenu" />
+  </Transition>
+  <Transition name="fade" mode="out-in">
+    <router-view />
+  </Transition>
   <footer>
     <footer-component />
   </footer>
