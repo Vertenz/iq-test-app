@@ -1,21 +1,38 @@
+<template>
+  <header-component @change="setShowMenu" />
+  <Transition name="fade" mode="out-in">
+    <menu-component @change="setShowMenu" v-if="showMenu" />
+  </Transition>
+  <Transition name="fade" mode="out-in">
+    <router-view />
+  </Transition>
+    <footer-component v-if="false"/>
+</template>
+
 <script setup>
 import { RouterView } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import MenuComponent from './components/MenuComponent.vue';
+import { ref } from 'vue';
+
+let showMenu = ref(false)
+
+function setShowMenu() {
+  showMenu.value = !showMenu.value;
+}
 </script>
 
-<template>
-  <header>
-    <header-component />
-    <menu-component />
-  </header>
-  <router-view />
-  <footer>
-    <footer-component />
-  </footer>
-</template>
-
 <style>
+@import url(./assets/global.css);
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

@@ -1,0 +1,14 @@
+.attention {
+    color: var(--attention-color);
+}
+
+@media (max-width: 295px) {
+    html {
+      font-size: 8px;
+    }
+  }
+@media (min-width: 820px) {
+    html {
+      font-size: 18px;
+    }
+  }
