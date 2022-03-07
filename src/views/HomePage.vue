@@ -1,12 +1,12 @@
 <template>
+  <div class="home-page">
     <HomeComponent />
     {{ showAbout }}
     {{ count }}
-    <Transition name="fade" mode="out-in"></Transition>
-        <section v-if="store.state.showAboutPage" class="about">
-            <AboutComponent />
-        </section>
-    <Transition />
+    <Transition name="fade" mode="out-in">
+        <AboutComponent v-if="store.state.showAboutPage"/>
+    </Transition>
+  </div>
 </template>
 
 <script setup>
@@ -18,6 +18,10 @@ const store = useStore();
 </script>
 
 <style scoped>
+.home-page {
+  background-image: url('/rain_bk2.jpg');
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.8s ease;

@@ -6,9 +6,7 @@
   <Transition name="fade" mode="out-in">
     <router-view />
   </Transition>
-  <footer>
-    <footer-component />
-  </footer>
+    <footer-component v-if="false"/>
 </template>
 
 <script setup>
@@ -26,7 +24,7 @@ function setShowMenu() {
 </script>
 
 <style>
-@import url(./assets/main.css);
+@import url(./assets/global.css);
 
 .fade-enter-active,
 .fade-leave-active {

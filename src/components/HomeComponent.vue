@@ -33,7 +33,13 @@ import { useRouter } from 'vue-router';
 
 const route = useRouter();
 const store = useStore();
-const showAbout = () => store.commit('setAnswer', ['showAboutPage', true]);
+const showAbout = () => {
+    store.commit('setAnswer', ['showAboutPage', true]);
+    setTimeout(() => {
+        const about = document.getElementById('about');
+        about.scrollIntoView()
+    }, 200)
+    };
 
 const goTest = () => route.push('/test')
 </script>
@@ -42,7 +48,9 @@ const goTest = () => route.push('/test')
 .main {
     background-image: url(/rain_bk.jpg);
     background-position: center;
-    height: 100vh;
+    background-repeat: no-repeat;
+    background-position-y: 45%;
+    height: calc(100vh - 50px);
 }
 
 .main-title {
@@ -56,7 +64,7 @@ const goTest = () => route.push('/test')
     font-family: Yeseva One;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 2.1rem;
     line-height: 35px;
     text-align: center;
     text-transform: uppercase;
@@ -66,7 +74,7 @@ const goTest = () => route.push('/test')
     font-family: PT Serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.3rem;
     line-height: 24px;
     text-align: center;
     letter-spacing: 0.05em;
@@ -75,7 +83,7 @@ const goTest = () => route.push('/test')
 }
 
 .main-title__h1 {
-    margin-bottom: 196px;
+    margin-bottom: calc(25vh + 3rem);
 }
 
 .main-btn {
@@ -90,7 +98,7 @@ const goTest = () => route.push('/test')
     font-family: PT Serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1.1rem;
     line-height: 19px;
     text-align: center;
     letter-spacing: 0.05em;
@@ -108,6 +116,10 @@ const goTest = () => route.push('/test')
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .main-next {
