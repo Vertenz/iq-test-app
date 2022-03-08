@@ -33,13 +33,7 @@ import { useRouter } from 'vue-router';
 
 const route = useRouter();
 const store = useStore();
-const showAbout = () => {
-    store.commit('setAnswer', ['showAboutPage', true]);
-    setTimeout(() => {
-        const about = document.getElementById('about');
-        about.scrollIntoView()
-    }, 200)
-    };
+const showAbout = () => store.commit('setShowAboutPage');
 
 const goTest = () => route.push('/test')
 </script>

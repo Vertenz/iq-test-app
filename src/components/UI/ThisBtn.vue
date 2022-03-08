@@ -39,6 +39,14 @@ const props = defineProps({
         background: #DADADA;
         box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
+        color: #8E8E8E;
+    }
+
+    .button_deactivate:hover, .button_deactivate:active {
+        background: #DADADA !important;
+        box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25) !important;
+        border-radius: 20px !important;
+        color: #8E8E8E !important;
     }
 
     .button_transparent {

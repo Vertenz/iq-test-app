@@ -1,13 +1,13 @@
 <template>
     <menu class="menu">
-        <div class="menu-cross" @click="$emit('change')">
+        <div class="menu-cross" @click="$emit('onChange')">
             <div class="menu-cross__line menu-cross__line_left"></div>
             <div class="menu-cross__line menu-cross__line_right"></div>
         </div>
         <nav class="menu-navigation">
-            <ul class="list" @click="$emit('change')">
+            <ul class="list" @click="$emit('onChange')">
                 <li class="list__link"><router-link to="/">ГЛАВНАЯ</router-link></li>
-                <li class="list__link"><router-link to="/about">ИНФОРМАЦИЯ О ТЕСТЕ</router-link></li>
+                <li class="list__link"><a href="/" @click.prevent="toAbout">ИНФОРМАЦИЯ О ТЕСТЕ</a></li>
                 <li class="list__link"><router-link to="/test">ПРОЙТИ ТЕСТ</router-link></li>
             </ul>
         </nav>
@@ -15,7 +15,15 @@
 </template>
 
 <script setup>
-    const emit = defineEmits('change')
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
+
+    const router = useRouter();
+    const store = useStore();
+    const toAbout = () => {
+        router.push('/')
+        store.commit('setShowAboutPage')
+    }
 </script>
 
 <style scoped>
@@ -43,6 +51,7 @@
         font-size: 16px;
         line-height: 22px;
         color: #fff;
+        cursor: pointer;
     }
 
     .list__link:hover > a {

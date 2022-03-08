@@ -80,13 +80,12 @@ const goTest = () => route.push('/test')
     font-family: Yeseva One;
     font-style: normal;
     font-weight: normal;
-    font-size: 1,3rem;
+    font-size: 1.3rem;
     line-height: 23px;
     text-align: center;
     letter-spacing: 0.05em;
     color: white;
     padding: 80px 36px;
-    width: 100vw;
     background: radial-gradient(84.34% 50.29% at 48.75% 49.71%, #2950C2 0%, rgba(38, 91, 199, 0.96) 40.62%, rgba(39, 98, 187, 0) 85.42%);
 }
 
@@ -98,7 +97,7 @@ const goTest = () => route.push('/test')
     font-family: PT Serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 1,1rem;
+    font-size: 1.1rem;
     line-height: 24px;
     letter-spacing: 0.05em;
     padding: 38px 11px;
@@ -138,7 +137,7 @@ const goTest = () => route.push('/test')
     font-family: Merriweather;
     font-style: normal;
     font-weight: normal;
-    font-size: 1,07rem;
+    font-size: 1.07rem;
     line-height: 20px;
     letter-spacing: 0.05em;
     margin-bottom: 15px;
@@ -170,7 +169,7 @@ const goTest = () => route.push('/test')
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 10px;
+    font-size: 0.7rem;
     line-height: 23px;
     letter-spacing: 0.05em;
     color: rgba(255, 255, 255, 0.5);
