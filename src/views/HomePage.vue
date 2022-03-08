@@ -1,8 +1,6 @@
 <template>
   <div class="home-page">
     <HomeComponent />
-    {{ showAbout }}
-    {{ count }}
     <Transition name="fade" mode="out-in">
         <AboutComponent v-if="store.state.showAboutPage"/>
     </Transition>

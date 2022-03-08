@@ -1,11 +1,9 @@
 <template>
-  <header-component @change="setShowMenu" />
+  <header-component @onChange="setShowMenu" />
   <Transition name="fade" mode="out-in">
-    <menu-component @change="setShowMenu" v-if="showMenu" />
+    <menu-component @onChange="setShowMenu" v-if="showMenu" />
   </Transition>
-  <Transition name="fade" mode="out-in">
     <router-view />
-  </Transition>
     <footer-component v-if="false"/>
 </template>
 

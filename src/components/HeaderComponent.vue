@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div class="header-menu" @click="$emit('change')">
+        <div class="header-menu" @click="$emit('onChange')">
             <div class="header-menu__line"></div>
             <div class="header-menu__line"></div>
             <div class="header-menu__line"></div>
@@ -20,8 +20,6 @@
 const props = defineProps({
     text: String
 })
-
-const emit = defineEmits('change')
 </script>
 
 <style scoped>
